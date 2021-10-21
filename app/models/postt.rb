@@ -1,0 +1,2 @@
+class Postt < ApplicationRecord
+end
