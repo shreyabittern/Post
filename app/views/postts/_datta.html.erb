@@ -1,12 +1,13 @@
 <h1>Postts</h1>
 <%= render 'form', postt: @postt %>
 
-<table>
+<table id="dttb" class="table table-hover">
   <thead>
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th colspan="3"></th>
+      <th>Image</th>
+      <th>Action</th>
     </tr>
   </thead>
 
@@ -15,13 +16,19 @@
       <tr>
         <td><%= postt.name %></td>
         <td><%= postt.description %></td>
-        <td><%= link_to 'Show', postt %></td>
-        <td><%= link_to 'Edit', edit_postt_path(postt) %></td>
-        <td><%= link_to 'Destroy', postt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= image_tag post.image_url rescue nil %></td>
+        <td><%= link_to 'Show', postt %>
+        <%= link_to 'Edit', edit_postt_path(postt) %>
+        <%= link_to 'Destroy', postt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<script type="text/javascript">
+    $(document).ready(function() {
+      $("#dttb").dataTable();
+    }); 
+  </script>
 
 <br>
 

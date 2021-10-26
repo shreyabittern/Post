@@ -4,7 +4,7 @@ class TestsController < ApplicationController
   # GET /tests or /tests.json
   def index
     @test = Test.new
-    @tests = Test.all
+    @tests = Test.all.paginate(:page => params[:page], :per_page => 2)
   end
 
   # GET /tests/1 or /tests/1.json
@@ -25,7 +25,7 @@ class TestsController < ApplicationController
     @test = Test.new
     @tests = Test.all
     @test_1 = Test.new(test_params)
-    if @test.save
+    if @test_1.save
       respond_to do |format|
         format.html { redirect_to tests_url } 
         format.js  # <-- will render `app/views/posts/update.js.erb`

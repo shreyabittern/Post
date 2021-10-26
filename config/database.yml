@@ -8,14 +8,14 @@ default: &default
   adapter: postgresql
   pool: 15
   timeout: 5000
-  username: postgres 
-  password: postgres
+  username: root 
+  password: root
   host: localhost
   port: 5432
 
 development:
   <<: *default
-  database: 'test1'
+  database: 'test11'
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

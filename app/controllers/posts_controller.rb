@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
   def index
     @post = Post.new
-    @posts = Post.all
+    @posts = Post.all.paginate(:page => params[:page], :per_page => 2)
   end
 
   # GET /posts/1 or /posts/1.json
@@ -24,8 +24,8 @@ class PostsController < ApplicationController
   def create
     @post = Post.new
     @posts = Post.all
-    @post = Post.new(post_params)
-    if @post.save
+    @post_data = Post.new(post_params)
+    if @post_data.save
       respond_to do |format|
         format.html { redirect_to posts_url } 
         format.js  # <-- will render `app/views/posts/update.js.erb`
@@ -79,6 +79,6 @@ end
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:name, :description)
+      params.require(:post).permit(:name, :description, :image)
     end
 end

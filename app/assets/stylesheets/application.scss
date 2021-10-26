@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+@import "datatables";
+@import 'datatables/jquery.dataTables';
+@import 'datatables/extensions/Responsive/responsive.dataTables';
+@import 'datatables/extensions/Buttons/buttons.dataTables';

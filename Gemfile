@@ -55,3 +55,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
+gem 'carrierwave'
+gem 'bootstrap-sass'
+gem 'devise'
+gem 'jquery-datatables'
+#gem 'will_paginate'
+gem 'will_paginate-bootstrap4'
